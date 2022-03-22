@@ -8,10 +8,35 @@ Generates a variety of simple, unique identifiers:
 - Custom ingegers
 - GUIDs
 
+## How to Use this API
+
+Many applications and scripts - written in any number of languages - require the use of unique identifiers.
+They can be useful for tracking, identifying, or linking objects. Rather than assigning sequential numbers
+that can be guessed, they can be assigned a unique identifier that is guaranteed to be unique.
+
+Request an identifier using the `/` endpoint:
+
+    http://ids.uvadcos.io/
+    {
+      "id": "ec2em9jx"
+    }
+
+Request a custom-length identifier using the `/id/{length}` endpoint:
+
+    http://ids.uvadcos.io/id/14
+    {   
+      "id": "4fkng652m06jiv"
+    }
+
+Request a GUID identifier using the `/guid` endpoint:
+    
+    http://ids.uvadcos.io/guid
+    {
+      "id": "f9c8f8f8-f8f8-f8f8-f8f8-f8f8f8f8f8f8"
+    }
 
 ## Development
-
-As typical with FastAPI development, run the local server as you code:
+With FastAPI development, you can run the local server as you code:
 ```
 # cd into the app/ directory
 cd app
@@ -19,9 +44,7 @@ cd app
 # run the local uvicorn server (install locally first)
 uvicorn main:app --reload
 ```
-
 Your dev site is now running locally at [http://localhost:8000/](http://localhost:8000/)
-
 
 ## Documentation
 
