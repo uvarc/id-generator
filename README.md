@@ -35,6 +35,12 @@ Request a GUID identifier using the `/guid` endpoint:
       "id": "f9c8f8f8-f8f8-f8f8-f8f8-f8f8f8f8f8f8"
     }
 
+Other identifiers:
+
+- http://ids.uvadcos.io/int/80
+- http://ids.uvadcos.io/alpha/upper/10
+- http://ids.uvadcos.io/alpha/lower/18
+
 ## Development
 With FastAPI development, you can run the local server as you code:
 ```
