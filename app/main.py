@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 import string
 import random
 import uuid
 
 app = FastAPI()
-
-# @app.get("/")  # zone apex
-# def apex_message():
-#     return {"Generate": "IDs","ReadMe": "/docs"}
+origins = ['*']
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_methods=["GET"]
+)
 
 @app.get("/")
 def generate_short_id():

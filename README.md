@@ -41,6 +41,16 @@ Other identifiers:
 
 ## Fetch an ID
 
+### `bash`
+
+    #!/bin/bash
+
+    set -e
+
+    my_id=`curl -s http://ids.uvadcos.io/ | jq -r .id`
+    echo $my_id
+
+
 ### Python3
 
     import requests
@@ -50,6 +60,7 @@ Other identifiers:
     data = json.loads(response.text)
     print(data['id'])
 
+
 ### JavaScript
 
     var http = new XMLHttpRequest();
@@ -57,6 +68,7 @@ Other identifiers:
     http.send();
     var data = JSON.parse(http.responseText);
     console.log(data.id);
+
 
 ### R
 
