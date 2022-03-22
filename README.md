@@ -36,6 +36,7 @@ Request a GUID identifier using the `/guid` endpoint: http://ids.uvadcos.io/guid
 Other identifiers:
 
 - http://ids.uvadcos.io/int/80
+- http://ids.uvadcos.io/alpha/14/
 - http://ids.uvadcos.io/alpha/upper/10
 - http://ids.uvadcos.io/alpha/lower/18
 
