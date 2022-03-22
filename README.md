@@ -14,23 +14,20 @@ Many applications and scripts - written in any number of languages - require the
 They can be useful for tracking, identifying, or linking objects. Rather than assigning sequential numbers
 that can be guessed, they can be assigned a unique identifier that is guaranteed to be unique.
 
-Request an identifier using the `/` endpoint:
+Request an identifier using the `/` endpoint: http://ids.uvadcos.io/
 
-    http://ids.uvadcos.io/
     {
       "id": "ec2em9jx"
     }
 
-Request a custom-length identifier using the `/id/{length}` endpoint:
+Request a custom-length identifier using the `/id/{length}` endpoint: http://ids.uvadcos.io/id/14
 
-    http://ids.uvadcos.io/id/14
     {   
       "id": "4fkng652m06jiv"
     }
 
-Request a GUID identifier using the `/guid` endpoint:
-    
-    http://ids.uvadcos.io/guid
+Request a GUID identifier using the `/guid` endpoint: http://ids.uvadcos.io/guid
+
     {
       "id": "f9c8f8f8-f8f8-f8f8-f8f8-f8f8f8f8f8f8"
     }
