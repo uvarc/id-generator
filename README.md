@@ -14,7 +14,7 @@ Many applications and scripts - written in any number of languages - require the
 They can be useful for tracking, identifying, or linking objects. Rather than assigning sequential numbers
 that can be guessed, they can be assigned a unique identifier that is guaranteed to be unique.
 
-### Endpoints
+## Endpoints
 Request an identifier using the `/` endpoint: http://ids.uvadcos.io/
 
     {
@@ -39,9 +39,9 @@ Other identifiers:
 - http://ids.uvadcos.io/alpha/upper/10
 - http://ids.uvadcos.io/alpha/lower/18
 
-### Fetch an ID
+## Fetch an ID
 
-#### Python3
+### Python3
 
     import requests
     import json
@@ -50,7 +50,7 @@ Other identifiers:
     data = json.loads(response.text)
     print(data['id'])
 
-#### JavaScript
+### JavaScript
 
     var http = new XMLHttpRequest();
     http.open("GET", "http://ids.uvadcos.io/", false);
@@ -58,28 +58,15 @@ Other identifiers:
     var data = JSON.parse(http.responseText);
     console.log(data.id);
 
-#### C
+### R
 
-    #include <stdio.h>
-    #include <curl/curl.h>
+    library("http")
+    library("jsonlite")
 
-    int main(void) {
-        CURL *curl;
-        CURLcode response;
-
-        curl_global_init(CURL_GLOBAL_ALL);
-
-        curl = curl_easy_init();
-
-        if(curl) {
-            curl_easy_setopt(curl, CURLOPT_URL, "http://ids.uvadcos.io/");
-            curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writefunc);
-            response = curl_easy_perform(curl);
-            curl_easy_cleanup(curl);
-        }
-        return 0;
-
-    }
+    res = GET("http://ids.uvadcos.io/")
+    data = fromJSON(rawToChar(res$content))
+    
+    print(data$id)
 
 ## Development
 With FastAPI development, you can run the local server as you code:
