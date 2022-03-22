@@ -1,4 +1,4 @@
-# UVARC ID Generator
+# Unique ID Generator
 
 Generates a variety of simple, unique identifiers:
 
@@ -14,6 +14,7 @@ Many applications and scripts - written in any number of languages - require the
 They can be useful for tracking, identifying, or linking objects. Rather than assigning sequential numbers
 that can be guessed, they can be assigned a unique identifier that is guaranteed to be unique.
 
+### Endpoints
 Request an identifier using the `/` endpoint: http://ids.uvadcos.io/
 
     {
@@ -37,6 +38,48 @@ Other identifiers:
 - http://ids.uvadcos.io/int/80
 - http://ids.uvadcos.io/alpha/upper/10
 - http://ids.uvadcos.io/alpha/lower/18
+
+### Fetch an ID
+
+#### Python3
+
+    import requests
+    import json
+
+    response = requests.get('http://ids.uvadcos.io/')
+    data = json.loads(response.text)
+    print(data['id'])
+
+#### JavaScript
+
+    var http = new XMLHttpRequest();
+    http.open("GET", "http://ids.uvadcos.io/", false);
+    http.send();
+    var data = JSON.parse(http.responseText);
+    console.log(data.id);
+
+#### C
+
+    #include <stdio.h>
+    #include <curl/curl.h>
+
+    int main(void) {
+        CURL *curl;
+        CURLcode response;
+
+        curl_global_init(CURL_GLOBAL_ALL);
+
+        curl = curl_easy_init();
+
+        if(curl) {
+            curl_easy_setopt(curl, CURLOPT_URL, "http://ids.uvadcos.io/");
+            curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writefunc);
+            response = curl_easy_perform(curl);
+            curl_easy_cleanup(curl);
+        }
+        return 0;
+
+    }
 
 ## Development
 With FastAPI development, you can run the local server as you code:
