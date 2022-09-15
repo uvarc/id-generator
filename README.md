@@ -15,6 +15,7 @@ They can be useful for tracking, identifying, or linking objects. Rather than as
 that can be guessed, they can be assigned a unique identifier that is guaranteed to be unique.
 
 ## Endpoints
+
 Request an identifier using the `/` endpoint: http://ids.uvadcos.io/
 
     {
