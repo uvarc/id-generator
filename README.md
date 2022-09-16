@@ -118,4 +118,5 @@ docker run -d -p 8080:80 --rm some_org/some_image:some_tag
 
 Pushes to the `main` branch of this container build and deploy directly to DCOS.
 
-    http://id.uvadcos.io/
+    https://ids.pods.uvarc.io/
+
