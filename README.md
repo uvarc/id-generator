@@ -14,21 +14,28 @@ Many applications and scripts - written in any number of languages - require the
 They can be useful for tracking, identifying, or linking objects. Rather than assigning sequential numbers
 that can be guessed, they can be assigned a unique identifier that is guaranteed to be unique.
 
+## Documentation
+
+FastAPI creates documentation automatically. Go to the `/docs` path of your running deployment.
+
+Or visit https://ids.pods.uvarc.io/docs
+
+
 ## Endpoints
 
-Request an identifier using the `/` endpoint: http://ids.uvadcos.io/
+Request an identifier using the `/` endpoint: https://ids.pods.uvarc.io/
 
     {
       "id": "ec2em9jx"
     }
 
-Request a custom-length identifier using the `/id/{length}` endpoint: http://ids.uvadcos.io/id/14
+Request a custom-length identifier using the `/id/{length}` endpoint: https://ids.pods.uvarc.io/id/14
 
     {   
       "id": "4fkng652m06jiv"
     }
 
-Request a GUID identifier using the `/guid` endpoint: http://ids.uvadcos.io/guid
+Request a GUID identifier using the `/guid` endpoint: https://ids.pods.uvarc.io/guid
 
     {
       "id": "f9c8f8f8-f8f8-f8f8-f8f8-f8f8f8f8f8f8"
@@ -36,10 +43,10 @@ Request a GUID identifier using the `/guid` endpoint: http://ids.uvadcos.io/guid
 
 Other identifiers:
 
-- http://ids.uvadcos.io/int/80
-- http://ids.uvadcos.io/alpha/14/
-- http://ids.uvadcos.io/alpha/upper/10
-- http://ids.uvadcos.io/alpha/lower/18
+- https://ids.pods.uvarc.io/int/80
+- https://ids.pods.uvarc.io/alpha/14/
+- https://ids.pods.uvarc.io/alpha/upper/10
+- https://ids.pods.uvarc.io/alpha/lower/18
 
 ## Fetch an ID
 
@@ -49,7 +56,7 @@ Other identifiers:
 
     set -e
 
-    my_id=`curl -s http://ids.uvadcos.io/ | jq -r .id`
+    my_id=`curl -s https://ids.pods.uvarc.io/ | jq -r .id`
     echo $my_id
 
 
@@ -58,7 +65,7 @@ Other identifiers:
     import requests
     import json
 
-    response = requests.get('http://ids.uvadcos.io/')
+    response = requests.get('https://ids.pods.uvarc.io/')
     data = json.loads(response.text)
     print(data['id'])
 
@@ -66,7 +73,7 @@ Other identifiers:
 ### JavaScript
 
     var http = new XMLHttpRequest();
-    http.open("GET", "http://ids.uvadcos.io/", false);
+    http.open("GET", "https://ids.pods.uvarc.io/", false);
     http.send();
     var data = JSON.parse(http.responseText);
     console.log(data.id);
@@ -77,12 +84,14 @@ Other identifiers:
     library("http")
     library("jsonlite")
 
-    res = GET("http://ids.uvadcos.io/")
+    res = GET("https://ids.pods.uvarc.io/")
     data = fromJSON(rawToChar(res$content))
     
     print(data$id)
 
+
 ## Development
+
 With FastAPI development, you can run the local server as you code:
 ```
 # cd into the app/ directory
@@ -92,12 +101,6 @@ cd app
 uvicorn main:app --reload
 ```
 Your dev site is now running locally at [http://localhost:8000/](http://localhost:8000/)
-
-## Documentation
-
-FastAPI creates documentation automatically. Go to the `/docs` path of your running deployment.
-
-Or visit http://id.uvadcos.io/docs
 
 
 ## Build the Container
@@ -116,7 +119,6 @@ docker run -d -p 8080:80 --rm some_org/some_image:some_tag
 
 ## Build + Deploy
 
-Pushes to the `main` branch of this container build and deploy directly to DCOS.
+Pushes to the `main` branch of this container build and deploy directly to K8S.
 
     https://ids.pods.uvarc.io/
-
