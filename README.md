@@ -5,7 +5,7 @@ Generates a variety of simple, unique identifiers:
 - Short alphanumeric
 - Custom alphanumeric
 - Custom alphabetic
-- Custom ingegers
+- Custom integers
 - GUIDs
 
 ## How to Use this API

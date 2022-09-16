@@ -48,11 +48,20 @@ def generate_custom_lowercase_alpha_id(length: int):
 
 @app.get("/int/{length}")
 def generate_custom_integer_id(length: int):
-    chars = string.digits
-    value = ''.join(random.choice(chars) for _ in range(length))
+    nums = string.digits
+    value = ''.join(random.choice(nums) for _ in range(length))
     return {"id": value}
     
 @app.get("/guid")
 def generate_guid():
     guid = uuid.uuid4()
     return {"id": guid}
+
+@app.get("/license")
+def generate_license_tag_id():
+    chars = string.ascii_uppercase
+    nums = string.digits
+    val1 = ''.join(random.choice(chars) for _ in range(3))
+    val2 = ''.join(random.choice(nums) for _ in range(4))
+    license = val1 + '-' + val2
+    return {"license": license}
