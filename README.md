@@ -7,6 +7,7 @@ Generates a variety of simple, unique identifiers:
 - Custom alphabetic
 - Custom integers
 - GUIDs
+- License Tags
 
 ## How to Use this API
 
@@ -47,10 +48,11 @@ Other identifiers:
 - https://ids.pods.uvarc.io/alpha/14/
 - https://ids.pods.uvarc.io/alpha/upper/10
 - https://ids.pods.uvarc.io/alpha/lower/18
+- https://ids.pods.uvarc.io/license
 
 ## Fetch an ID
 
-### `bash`
+### Using `bash`
 
     #!/bin/bash
 
@@ -60,7 +62,7 @@ Other identifiers:
     echo $my_id
 
 
-### Python3
+### Using Python3
 
     import requests
     import json
@@ -70,7 +72,7 @@ Other identifiers:
     print(data['id'])
 
 
-### JavaScript
+### Using JavaScript
 
     var http = new XMLHttpRequest();
     http.open("GET", "https://ids.pods.uvarc.io/", false);
@@ -79,7 +81,7 @@ Other identifiers:
     console.log(data.id);
 
 
-### R
+### Using R
 
     library("http")
     library("jsonlite")
@@ -92,7 +94,7 @@ Other identifiers:
 
 ## Development
 
-With FastAPI development, you can run the local server as you code:
+With FastAPI development, you can run a local server as you code:
 ```
 # cd into the app/ directory
 cd app
@@ -119,6 +121,7 @@ docker run -d -p 8080:80 --rm some_org/some_image:some_tag
 
 ## Build + Deploy
 
-Pushes to the `main` branch of this container build and deploy directly to K8S.
+Tagged pushes (`1.5`, `2.13`) of this container build and deploy directly to K8S.
+More information on the build-deploy pipeline can be found in [`.github/workflows/build.yml`](https://github.com/uvarc/id-generator/blob/main/.github/workflows/build.yml)
 
     https://ids.pods.uvarc.io/
