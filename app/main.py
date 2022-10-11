@@ -65,3 +65,12 @@ def generate_license_tag_id():
     val2 = ''.join(random.choice(nums) for _ in range(4))
     license = val1 + '-' + val2
     return {"license": license}
+
+@app.get("/keys")
+def generate_key_and_secret_key():
+    chars = string.ascii_uppercase
+    KeyBase = ''.join(random.choice(chars) for _ in range(10))
+    SecretChars = string.ascii_lowercase + string.digits + string.ascii_uppercase
+    SecretBase = ''.join(random.choice(SecretChars) for _ in range(36))
+    accesskey = 'AK' + KeyBase
+    return {"access_key": accesskey,"secret_key": SecretBase}

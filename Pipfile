@@ -4,13 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "*"
+fastapi = "<0.69.0,>=0.68.0"
 typing = "*"
 pydantic = "*"
 boto3 = "*"
 requests = "*"
 gunicorn = "*"
-uvicorn = "*"
+uvicorn = "<0.16.0,>=0.15.0"
 uuid = "*"
 
 [dev-packages]
