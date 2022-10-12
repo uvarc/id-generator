@@ -72,5 +72,5 @@ def generate_key_and_secret_key():
     KeyBase = ''.join(random.choice(chars) for _ in range(10))
     SecretChars = string.ascii_lowercase + string.digits + string.ascii_uppercase
     SecretBase = ''.join(random.choice(SecretChars) for _ in range(36))
-    accesskey = 'AK' + KeyBase
+    accesskey = 'UV' + KeyBase
     return {"access_key": accesskey,"secret_key": SecretBase}
