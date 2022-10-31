@@ -22,6 +22,7 @@ def generate_short_id():
     value = ''.join(random.choice(chars) for _ in range(size))
     return {"id": value}
 
+
 @app.get("/id/{length}")
 def generate_custom_length_id(length: int):
     chars = string.ascii_lowercase + string.digits
