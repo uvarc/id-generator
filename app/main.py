@@ -22,7 +22,6 @@ def generate_short_id():
     value = ''.join(random.choice(chars) for _ in range(size))
     return {"id": value}
 
-
 @app.get("/id/{length}")
 def generate_custom_length_id(length: int):
     chars = string.ascii_lowercase + string.digits
@@ -75,3 +74,8 @@ def generate_key_and_secret_key():
     SecretBase = ''.join(random.choice(SecretChars) for _ in range(36))
     accesskey = 'UV' + KeyBase
     return {"access_key": accesskey,"secret_key": SecretBase}
+
+@app.get("/neal")
+def deployment_test():
+    return {"fname":"neal","lname":"magee"}
+
