@@ -77,5 +77,4 @@ def generate_key_and_secret_key():
 
 @app.get("/neal")
 def deployment_test():
-    return {"fname":"neal","lname":"magee"}
-
+    return {"fname":"neal","lname":"magee","test":"case"}
