@@ -74,7 +74,3 @@ def generate_key_and_secret_key():
     SecretBase = ''.join(random.choice(SecretChars) for _ in range(36))
     accesskey = 'UV' + KeyBase
     return {"access_key": accesskey,"secret_key": SecretBase}
-
-@app.get("/neal")
-def deployment_test():
-    return {"fname":"neal","lname":"magee","test":"case"}
