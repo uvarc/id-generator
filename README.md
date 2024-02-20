@@ -112,6 +112,13 @@ Build locally with the `docker build` command:
 docker build -t some_org/some_image:some_tag .
 ```
 
+## Build the Container using GitHub Actions
+
+Build remotely by applying a `git tag` to the commit:
+```
+git tag 1.NN
+```
+
 ## Run the Container Locally
 
 Run the image locally and map the container port (80) to some host port (8080):
