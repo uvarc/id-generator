@@ -1,4 +1,4 @@
-fastapi>=0.68.0,<0.69.0
+fastapi
 typing
-uvicorn>=0.15.0,<0.16.0
+uvicorn
 uuid
