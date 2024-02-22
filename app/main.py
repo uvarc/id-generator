@@ -17,7 +17,7 @@ app.add_middleware(
 
 @app.get("/")
 def generate_short_id():
-    size = 8
+    size = 12
     chars = string.ascii_lowercase + string.digits
     value = ''.join(random.choice(chars) for _ in range(size))
     return {"id": value}
