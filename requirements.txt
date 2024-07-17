@@ -2,3 +2,5 @@ fastapi
 typing
 uvicorn
 uuid
+boto3
+botocore
