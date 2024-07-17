@@ -66,6 +66,12 @@ def generate_license_tag_id():
     license = val1 + '-' + val2
     return {"license": license}
 
+@app.get("/flightcode")
+def generate_flight_code():
+    chars = string.ascii_uppercase
+    val = ''.join(random.choice(chars) for _ in range(6))
+    return {"flightcode": val}
+
 @app.get("/keys")
 def generate_key_and_secret_key():
     chars = string.ascii_uppercase
