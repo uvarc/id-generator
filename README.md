@@ -7,7 +7,8 @@ Generates a variety of simple, unique identifiers:
 - Custom alphabetic
 - Custom integers
 - GUIDs
-- License Tags
+- Pseudo License Tags
+- Pseudo Flight Codes
 
 ## How to Use this API
 
